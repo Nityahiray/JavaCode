@@ -5,7 +5,7 @@ public class EvenDigits {
         int[] nums = { 12, 345, 2, 6, 7896 };
 
         // System.out.println(findNumbers(nums));
-        System.out.println(digits2(345678));
+        System.out.println(digits2(-345678));
     }
 
     static int findNumbers(int[] nums) {
@@ -27,7 +27,11 @@ public class EvenDigits {
     }
 
     static int digits2(int num) {
-        return (int) (Math.log10(num));
+
+        if (num < 0){
+            num = num * -1;
+        }
+        return (int) (Math.log10(num)) + 1;
     }
 
     // Function to count the number of digits
